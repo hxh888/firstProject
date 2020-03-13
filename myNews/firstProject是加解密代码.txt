@@ -1,0 +1,9 @@
+1.在package.json 中新加依赖  dependencies中
+"encryptlong":"^3.1.4",
+"js-base64":"^2.5.1",
+
+2.在src中新建commonFunction文件夹 在里面加utils.js文件
+
+3.在main.js中写
+import utils from './commonFunction/utils.js'
+Vue.prototype.$utils = utils
