@@ -15,6 +15,9 @@ Vue.prototype.$rules = rules;
 
 import {post,get} from './api/http'
 
+import utils from './commonFunction/utils.js'
+Vue.prototype.$utils = utils
+
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 
@@ -26,6 +29,12 @@ Vue.prototype.$tab = '/tab'
 Vue.prototype.$channelaccess = '/channelaccess'
 Vue.prototype.$xdapi = '/xdapi'
 Vue.prototype.$afterloan = '/afterloan'
+Vue.prototype.$aesEncrypt = (value,aesKey) =>{
+  return CryptoJS.AES.encrypt(value,CryptoJS.enc.Utf8.parse(aesKey),{
+    mode:CryptoJS.mode.ECB,
+    padding:CryptoJS.pad.Pkcs7
+  }).toString()
+}
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 

@@ -114,8 +114,10 @@ export function get(url,params={}){
      axios.post(url,{...lang, loginId, ...data})
           .then(response => {
             resolve(response.data);
+            // resolve(this.$utils.decrypt(response.data))
           },err => {
             reject(err)
+            // reject(this.$utils.decrypt(err))
           })
    })
  }
